@@ -1,0 +1,1 @@
+qemu-system-arm -M realview-pb-a8 -kernel navilos.axf -gdb tcp::1234,ipv4 -nographic -S 
