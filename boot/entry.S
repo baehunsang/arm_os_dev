@@ -71,6 +71,9 @@
         orr r1, r1, #ARM_MODE_BIT_SYS 
         msr cpsr, r1 
         ldr sp, =USRSYS_STACK_TOP
+        
+        //jump userland
+        bl main
 
 
     dummy_handler:
