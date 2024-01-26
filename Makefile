@@ -25,10 +25,10 @@ run: $(navilos)
 	qemu-system-arm -M realview-pb-a8 -kernel navilos.axf -nographic
 
 debug: $(navilos)
-	qemu-system-arm -M realview-pb-a8 -kernel navilos.axf -gdb tcp::1234,ipv4 -nographic -S 
+	qemu-system-arm -M realview-pb-a8 -kernel build/navilos.axf -gdb tcp::1234,ipv4 -nographic -S 
 
 gdb: 
-	gdb-multiarch navilos.axf
+	gdb-multiarch build/navilos.axf
 
 $(navilos): $(ASM_OBJS) $(LINKER_SCRIPT)
 	$(LD) -n -T $(LINKER_SCRIPT) -o $(navilos) $(ASM_OBJS)
