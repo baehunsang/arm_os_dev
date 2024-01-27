@@ -73,7 +73,7 @@
         ldr sp, =USRSYS_STACK_TOP
         
         //jump userland
-        bl main
+        bl start_main
 
 
     dummy_handler:

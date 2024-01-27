@@ -11,3 +11,7 @@ uint32_t putstr(const char* s){
     }
     return c;
 }
+
+void putchar(const char c){
+    Hal_uart_put_char(c);
+}

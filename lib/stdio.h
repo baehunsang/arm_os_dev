@@ -4,5 +4,6 @@
 #define LIB_STDIO_H_
 
 uint32_t putstr(const char* s);
+void putchar(const char c);
 
 #endif
