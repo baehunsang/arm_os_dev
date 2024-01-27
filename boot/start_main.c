@@ -10,7 +10,7 @@ void banner(){
     for(uint32_t i=0; i< 100; i++){
         putchar('#');
     }
-    putstr("\nBoot Complete\n");
+    putstr("\nnavilos Boot Complete\n");
     for(uint32_t i=0; i< 100; i++){
         putchar('#');
     }
