@@ -28,7 +28,7 @@ INC_DIRS = -Iinclude \
 			-Ihal/$(TARGET) \
 			-Ilib
 
-CFLAGS = -c -g -std=c11 -mfloat-abi=soft
+CFLAGS = -c -g -std=c11 -mfloat-abi=soft -fno-stack-protector
 
 navilos = build/navilos.axf
 navilos_bin = build/navilos.bin
