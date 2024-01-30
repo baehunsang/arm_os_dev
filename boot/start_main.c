@@ -1,7 +1,9 @@
 #include "stdint.h"
 #include "stdio.h"
+#include "HalInterrupt.h"
 
 static void Hw_init(){
+    Hal_interrupt_init();
     Hal_uart_init();
 }
 
