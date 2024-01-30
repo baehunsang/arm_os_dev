@@ -6,6 +6,7 @@
     .global vector_start
     .global vector_end
 
+
     vector_start:
         //Exception vector table
         ldr pc, reset_handler_addr

@@ -7,7 +7,7 @@ void main(){
     uint32_t len;
     putstr("[-] get input string1\n");
     len = getstr(buffer2, 5);
-     putstr("\n[-] get input string1\n");
+    putstr("\n[-] get input string2\n");
     len = getstr(buffer, 100);
     putstr("[-] your input 1: \n");
     putstr(buffer2);
