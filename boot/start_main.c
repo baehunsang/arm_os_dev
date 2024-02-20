@@ -3,7 +3,34 @@
 #include "HalInterrupt.h"
 #include "stdlib.h"
 #include "stdbool.h"
+#include "task.h"
 
+void User_task0();
+void User_task1();
+void User_task2();
+
+
+
+static void Kernel_init(){
+    uint32_t taskId;
+
+    Kernel_task_init();
+    taskId = Kernel_task_create(User_task0);
+    if(NOT_ENOUGH_TASK_NUM == taskId){
+        putstr("[ERROR]Process creation Fail\n");
+    }
+
+    taskId = Kernel_task_create(User_task1);
+    if(NOT_ENOUGH_TASK_NUM == taskId){
+        putstr("[ERROR]Process creation Fail\n");
+    }
+
+    taskId = Kernel_task_create(User_task2);
+    if(NOT_ENOUGH_TASK_NUM == taskId){
+        putstr("[ERROR]Process creation Fail\n");
+    }
+
+}
 
 static void Hw_init(){
     Hal_interrupt_init();
@@ -47,8 +74,9 @@ static void Timer_test(){
 
 void start_main(){
     Hw_init();
+    Kernel_init();
     banner();
     //printf_test();
-    Timer_test();
-    //main();
+    //Timer_test();
+    main();
 }
