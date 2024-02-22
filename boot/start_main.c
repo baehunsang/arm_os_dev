@@ -3,7 +3,7 @@
 #include "HalInterrupt.h"
 #include "stdlib.h"
 #include "stdbool.h"
-#include "task.h"
+#include "Kernel.h"
 
 void User_task0();
 void User_task1();
@@ -30,6 +30,7 @@ static void Kernel_init(){
         putstr("[ERROR]Process creation Fail\n");
     }
 
+    Kernel_start();
 }
 
 static void Hw_init(){
@@ -74,9 +75,9 @@ static void Timer_test(){
 
 void start_main(){
     Hw_init();
-    Kernel_init();
     banner();
+    Kernel_init();
     //printf_test();
     //Timer_test();
-    main();
+    //main();
 }

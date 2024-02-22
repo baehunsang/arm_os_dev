@@ -1,7 +1,12 @@
 #include "stdio.h"
 #include "stdbool.h"
+#include "Kernel.h"
 
 void User_task1(){
-    debug_printf("User task #0\n");
-    while (true);
+    uint32_t sp = 0;
+
+    while (true){
+        debug_printf("User Task #1 SP=0x%x\n", &sp);
+        Kernel_yield();
+    }
 }
