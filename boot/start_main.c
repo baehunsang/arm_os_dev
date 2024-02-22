@@ -9,13 +9,8 @@ void User_task0();
 void User_task1();
 void User_task2();
 
-
-
-static void Kernel_init(){
-    uint32_t taskId;
-
-    Kernel_task_init();
-    taskId = Kernel_task_create(User_task0);
+void Kernel_process_add(){
+    uint32_t taskId = Kernel_task_create(User_task0);
     if(NOT_ENOUGH_TASK_NUM == taskId){
         putstr("[ERROR]Process creation Fail\n");
     }
@@ -29,6 +24,14 @@ static void Kernel_init(){
     if(NOT_ENOUGH_TASK_NUM == taskId){
         putstr("[ERROR]Process creation Fail\n");
     }
+}
+
+static void Kernel_init(){
+    Kernel_task_init();
+
+    Kernel_event_flag_init();
+
+    Kernel_process_add();
 
     Kernel_start();
 }
